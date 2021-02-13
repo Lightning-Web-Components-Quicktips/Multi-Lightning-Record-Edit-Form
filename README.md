@@ -1,18 +1,11 @@
-# Salesforce DX Project: Next Steps
+# `Multiple Submit` Lightning-Record-Edit-Form 
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+YouTube Video Explanation: https://youtu.be/xbH_QX_Dyrk
 
-## How Do You Plan to Deploy Your Changes?
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+Create multiple records at once using Salesforce Lightning Web Component: [lightning-record-edit-form](https://developer.salesforce.com/docs/component-library/bundle/lightning-record-edit-form).
 
-## Configure Your Salesforce DX Project
+## Things to remember
+- Calling `submit()` on multiple forms at once may cause unexpected behavior if you redirect the user! Always make sure all `HTTP POST` requests have completed by using an `onsuccess` callback when submitting multiple `lightning-record-edit-form` components.
+- Programmatically calling `submit()` on a `lightning-record-edit-form` **DOES NOT FIRE `onsubmit` EVENT**!
 
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
-
-## Read All About It
-
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
