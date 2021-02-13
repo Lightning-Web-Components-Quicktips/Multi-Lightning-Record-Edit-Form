@@ -1,0 +1,113 @@
+<template>
+  <lightning-card title="Account & Contact Creation">
+    <lightning-layout>
+      <lightning-layout-item padding="around-small">
+        <lightning-record-edit-form
+          object-api-name="Account"
+          onsuccess={handleAccountSuccess}
+          data-id="accountForm"
+        >
+          <lightning-messages> </lightning-messages>
+          <lightning-input-field field-name="Name"></lightning-input-field>
+        </lightning-record-edit-form>
+      </lightning-layout-item>
+
+      <lightning-layout-item padding="around-small">
+        <!-- Contact 1 -->
+        <lightning-record-edit-form
+          object-api-name="Contact"
+          onsubmit={handleSubmit}
+          onsuccess={handleContactSaveSuccess}
+          data-id="contactForm"
+        >
+          <lightning-messages> </lightning-messages>
+          <lightning-input-field
+            field-name="FirstName"
+            required
+          ></lightning-input-field>
+          <lightning-input-field
+            field-name="LastName"
+            required
+          ></lightning-input-field>
+
+          <!-- AccountID For Contact (hidden) -->
+          <lightning-input-field
+            field-name="AccountId"
+            data-id="contactAccountId"
+            class="hidden"
+          ></lightning-input-field>
+        </lightning-record-edit-form>
+        <!-- End Contact 1 -->
+      </lightning-layout-item>
+
+      <lightning-layout-item padding="around-small">
+        <!-- Contact 2 -->
+        <lightning-record-edit-form
+          object-api-name="Contact"
+          data-id="contactForm"
+          onsuccess={handleContactSaveSuccess}
+        >
+          <lightning-messages> </lightning-messages>
+          <lightning-input-field
+            field-name="FirstName"
+            required
+          ></lightning-input-field>
+          <lightning-input-field
+            field-name="LastName"
+            required
+          ></lightning-input-field>
+
+          <!-- AccountID For Contact (hidden) -->
+          <lightning-input-field
+            field-name="AccountId"
+            data-id="contactAccountId"
+            class="hidden"
+          ></lightning-input-field>
+        </lightning-record-edit-form>
+        <!-- End Contact 2 -->
+      </lightning-layout-item>
+
+      <lightning-layout-item padding="around-small">
+        <!-- Contact 3 -->
+        <lightning-record-edit-form
+          object-api-name="Contact"
+          data-id="contactForm"
+          onsuccess={handleContactSaveSuccess}
+        >
+          <lightning-messages> </lightning-messages>
+          <lightning-input-field
+            field-name="FirstName"
+            required
+          ></lightning-input-field>
+          <lightning-input-field
+            field-name="LastName"
+            required
+          ></lightning-input-field>
+          <!-- AccountID For Contact (hidden) -->
+          <lightning-input-field
+            field-name="AccountId"
+            data-id="contactAccountId"
+            class="hidden"
+          ></lightning-input-field>
+        </lightning-record-edit-form>
+        <!-- End Contact 3 -->
+      </lightning-layout-item>
+      <div class="slds-p-around_small slds-align_absolute-center">
+        <lightning-button
+          type="button"
+          variant="brand"
+          onclick={handleSave}
+          label="Save"
+        ></lightning-button>
+      </div>
+      <div class="slds-p-around_small slds-align_absolute-center">
+        <lightning-button
+          type="button"
+          variant="neutral"
+          onclick={handleReset}
+          label="Reset"
+        ></lightning-button>
+      </div>
+    </lightning-layout>
+  </lightning-card>
+</template>
